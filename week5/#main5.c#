@@ -1,0 +1,1980 @@
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ pwd
+/
+bash-3.2$ pwd
+/
+bash-3.2$ cd ~
+bash-3.2$ pwd
+/Users/masayukifujita
+bash-3.2$ cd git
+bash-3.2$ pwd
+/Users/masayukifujita/git
+bash-3.2$ ls
+test				week3-assignment-trombiano1
+week2-assignment-trombiano1	week4-assignment-trombiano1
+bash-3.2$ git clone github:eeic-software1-2020/week5-assignment-trombiano1
+Cloning into 'week5-assignment-trombiano1'...
+Enter passphrase for key '/Users/masayukifujita/.ssh/id_rsa_github': 
+remote: Enumerating objects: 9, done.        
+remote: Counting objects: 100% (9/9), done.        
+remote: Compressing objects: 100% (8/8), done.        
+remote: Total 9 (delta 3), reused 3 (delta 1), pack-reused 0        
+Receiving objects: 100% (9/9), 47.43 KiB | 269.00 KiB/s, done.
+Resolving deltas: 100% (3/3), done.
+bash-3.2$ ls
+test				week3-assignment-trombiano1	week5-assignment-trombiano1
+week2-assignment-trombiano1	week4-assignment-trombiano1
+bash-3.2$ cd week5-assignment-trombiano1/
+bash-3.2$ ls
+README.md		main2.c			main4.c			power_iteration.pdf
+main1.c			main3.c			main5.c
+bash-3.2$ gcc main1.c
+main1.c:7:23: error: use of undeclared identifier 'agrc'; did you mean 'argc'?
+  for (int i = 1; i < agrc; i++i){
+                      ^~~~
+                      argc
+main1.c:5:15: note: 'argc' declared here
+int main (int argc, char *argv[]) {
+              ^
+main1.c:7:32: error: expected ')'
+  for (int i = 1; i < agrc; i++i){
+                               ^
+main1.c:7:7: note: to match this '('
+  for (int i = 1; i < agrc; i++i){
+      ^
+main1.c:8:5: error: use of undeclared identifier 'num'; did you mean 'nums'?
+    num[i - 1] = atoi(argv[i]);
+    ^~~
+    nums
+main1.c:6:7: note: 'nums' declared here
+  int nums[argc - 1];
+      ^
+3 errors generated.
+bash-3.2$ gcc main1.c
+main1.c:7:32: error: expected ')'
+  for (int i = 1; i < argc; i++i){
+                               ^
+main1.c:7:7: note: to match this '('
+  for (int i = 1; i < argc; i++i){
+      ^
+main1.c:8:5: error: use of undeclared identifier 'num'; did you mean 'nums'?
+    num[i - 1] = atoi(argv[i]);
+    ^~~
+    nums
+main1.c:6:7: note: 'nums' declared here
+  int nums[argc - 1];
+      ^
+2 errors generated.
+bash-3.2$ gcc main1.c
+main1.c:8:5: error: use of undeclared identifier 'num'; did you mean 'nums'?
+    num[i - 1] = atoi(argv[i]);
+    ^~~
+    nums
+main1.c:6:7: note: 'nums' declared here
+  int nums[argc - 1];
+      ^
+1 error generated.
+bash-3.2$ gcc main1.c
+main1.c:8:5: error: use of undeclared identifier 'num'; did you mean 'nums'?
+    num[i - 1] = atoi(argv[i]);
+    ^~~
+    nums
+main1.c:6:7: note: 'nums' declared here
+  int nums[argc - 1];
+      ^
+1 error generated.
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out
+0
+bash-3.2$ ./a.out 12 23 34
+69>
+bash-3.2$ gcc main1.c
+main1.c:13:17: warning: format specifies type 'char *' but the argument has type 'char'
+      [-Wformat]
+  printf("%s\n",*argv[1]);
+          ~~    ^~~~~~~~
+          %c
+1 warning generated.
+bash-3.2$ ./a.out 12 23 34
+Segmentation fault: 11
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+1
+bash-3.2$ ./a.out 12 23 34
+1
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+2
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+23
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+12
+bash-3.2$ gcc main1.c
+main1.c:4:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+void main (int *a, int *b){
+^
+main1.c:4:1: note: change return type to 'int'
+void main (int *a, int *b){
+^~~~
+int
+main1.c:4:6: error: first parameter of 'main' (argument count) must be of type 'int'
+void main (int *a, int *b){
+     ^
+main1.c:4:6: error: second parameter of 'main' (argument array) must be of type 'char **'
+1 warning and 2 errors generated.
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+bash-3.2$ gcc main1.c
+main1.c:17:26: error: use of undeclared identifier 'a'
+  printf("%c\n",compare(&a,&b));
+                         ^
+main1.c:17:29: error: use of undeclared identifier 'b'
+  printf("%c\n",compare(&a,&b));
+                            ^
+2 errors generated.
+bash-3.2$ gcc main1.c
+main1.c:19:17: error: argument type 'void' is incomplete
+  printf("%c\n",compare(&a,&b));
+                ^
+1 error generated.
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+b is bigger than a
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a is bigger than b
+bash-3.2$ gcc main1.c
+main1.c:21:3: warning: implicit declaration of function 'compare' is invalid in C99
+      [-Wimplicit-function-declaration]
+  compare(&a,&b);
+  ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_compare", referenced from:
+      _main in main1-bdfc98.o
+     (maybe you meant: _compare_and_flip)
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+bash-3.2$ ./a.out 12 23 34
+bash: ./a.out: No such file or directory
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a:,b:
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a:5,b:2
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a:5,b:6
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a:5,b:6
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+a:2,b:5
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+i,j=1,0
+i,j=2,0
+i,j=2,1
+i,j=3,0
+i,j=3,1
+i,j=3,2
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+i,j=0,0
+i,j=0,1
+i,j=0,2
+i,j=1,0
+i,j=1,1
+i,j=1,2
+i,j=2,0
+i,j=2,1
+i,j=2,2
+i,j=3,0
+i,j=3,1
+i,j=3,2
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+i,j=0,0
+i,j=0,1
+i,j=1,0
+i,j=1,1
+i,j=2,0
+i,j=2,1
+i,j=3,0
+i,j=3,1
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+i,j=0,0
+i,j=0,1
+i,j=0,2
+i,j=0,3
+i,j=1,0
+i,j=1,1
+i,j=1,2
+i,j=2,0
+i,j=2,1
+i,j=3,0
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+0x7ffee8f16aa0
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+0x7ffee828caa4
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+0x7ffeec365aa4
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+23
+23
+23
+23
+23
+23
+23
+23
+23
+23
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+12
+12
+12
+12
+12
+12
+12
+12
+12
+12
+bash-3.2$ gcc main1.c
+main1.c:24:26: error: use of undeclared identifier 'n'
+      compare_and_flip(&(n),&(n+1));
+                         ^
+main1.c:24:31: error: use of undeclared identifier 'n'
+      compare_and_flip(&(n),&(n+1));
+                              ^
+2 errors generated.
+bash-3.2$ gcc main1.c
+main1.c:24:29: error: cannot take the address of an rvalue of type 'int'
+      compare_and_flip(&(j),&(j+1));
+                            ^ ~~~
+1 error generated.
+bash-3.2$ gcc main1.c
+main1.c:25:24: error: use of undeclared identifier 'num_p'; did you mean 'nums_p'?
+      compare_and_flip(num_p+j,num_p+j+1);
+                       ^~~~~
+                       nums_p
+main1.c:16:8: note: 'nums_p' declared here
+  int *nums_p = nums;
+       ^
+main1.c:25:32: error: use of undeclared identifier 'num_p'; did you mean 'nums_p'?
+      compare_and_flip(num_p+j,num_p+j+1);
+                               ^~~~~
+                               nums_p
+main1.c:16:8: note: 'nums_p' declared here
+  int *nums_p = nums;
+       ^
+2 errors generated.
+bash-3.2$ gcc main1.c
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34
+1
+12
+23
+34
+bash-3.2$ ./a.out 12 23 34 16
+0
+12
+16
+23
+34
+bash-3.2$ ./a.out 12 23 34 16 83
+12
+16
+23
+34
+83
+32766
+bash-3.2$ ./a.out 12 23 34 16 82
+12
+16
+23
+34
+82
+32766
+bash-3.2$ ./a.out 12 23 34 16
+0
+12
+16
+23
+34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+0
+0
+12
+16
+23
+bash-3.2$ ./a.out 12 23 34 16 83
+12
+16
+23
+34
+83
+32766
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16 83
+12
+16
+23
+34
+83
+32766
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16 83
+12
+16
+23
+34
+83
+bash-3.2$ ./a.out 12 23 34 16
+0
+0
+12
+16
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+0
+0
+0
+12
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+0
+12
+16
+23
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+0
+12
+16
+23
+bash-3.2$ gcc main1.c
+main1.c:26:24: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+      printf("%d,%d\n",nums_p+j,nums_p+j+1);
+              ~~       ^~~~~~~~
+main1.c:26:33: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+      printf("%d,%d\n",nums_p+j,nums_p+j+1);
+                 ~~             ^~~~~~~~~~
+2 warnings generated.
+bash-3.2$ gcc main1.c
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+12,13
+13,14
+14,15
+15,16
+12,13
+13,14
+14,15
+12,13
+13,14
+0,1
+0
+12
+16
+23
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+12,23
+23,34
+16,34
+0,34
+12,23
+16,23
+0,23
+12,16
+0,16
+0,12
+0
+12
+16
+23
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+12,23
+23,34
+34,16
+34,219447922
+12,23
+23,16
+23,34
+12,16
+16,23
+12,16
+12
+16
+23
+34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+12,23
+23,34
+34,16
+34,105988722
+12,23
+23,16
+23,34
+12,16
+16,23
+12
+16
+23
+34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+23
+34
+16
+12,23
+23,34
+34,16
+12,23
+23,16
+12,16
+12
+16
+23
+34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12,23
+23,34
+34,16
+12,23
+23,16
+12,16
+12
+16
+23
+34
+bash-3.2$ gcc main1.c
+bash-3.2$ ./a.out 12 23 34 16
+12
+16
+23
+34
+bash-3.2$ ./a.out 12 23 34 16 38 28 86
+12
+16
+23
+28
+34
+38
+86
+bash-3.2$ ls
+README.md		a.out			main1.c			main2.c			main3.c			main4.c			main5.c			power_iteration.pdf
+bash-3.2$ cat main1.c
+#include <stdio.h>
+#include <stdlib.h>
+
+void compare_and_flip(int *a, int *b){
+  int temp;
+  if(*a <  *b){
+  } else {
+    temp = *b;
+    *b = *a;
+    *a = temp;
+  }
+}
+
+int main (int argc, char *argv[]) {
+  int nums[argc - 1];
+  int *nums_p = nums;
+  for (int i = 1; i < argc; ++i){
+    nums[i - 1] = atoi(argv[i]);
+  }
+  for(int i = 0; i < argc - 2; ++i){
+    for(int j = 0; j < (argc - i - 2); ++j){
+      compare_and_flip(nums_p+j,nums_p+j+1);
+    }
+  }
+  for(int i = 0; i < argc - 1; ++i){
+    printf("%d\n",nums[i]);
+  }
+}
+bash-3.2$ gcc main2.c
+main2.c:11:17: warning: incompatible pointer to integer conversion assigning to 'char' from
+      'char *'; dereference with * [-Wint-conversion]
+    s[argc - 1] = argv[i];
+                ^ ~~~~~~~
+                  *
+main2.c:14:17: warning: format specifies type 'char *' but the argument has type 'char'
+      [-Wformat]
+    printf("%s",s[i]);
+            ~~  ^~~~
+            %c
+2 warnings generated.
+bash-3.2$ gcc main2.c
+main2.c:14:17: warning: format specifies type 'char *' but the argument has type 'char'
+      [-Wformat]
+    printf("%s",*s[i]);
+            ~~  ^~~~~
+            %c
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out
+bash-3.2$ ./a.out asdf owiuefj
+@
+H
+bash-3.2$ gcc main2.c
+main2.c:14:19: warning: format specifies type 'char *' but the argument has type 'char'
+      [-Wformat]
+    printf("%s\n",*s[i]);
+            ~~    ^~~~~
+            %c
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+@\>ìþ
+H)ÄH‰àH‹uÈH‰uØÇEÔ
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+@;áþ
+H)ÄH‰àH‹uÈH‰uØÇEÔ
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+H)ÄH‰àH‹uÈH‰uØÇEÔ
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+H)ÄH‰àH‹uÈH‰uØÇEÔ
+owiuefj
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+asdf
+owiuefj
+bash-3.2$ gcc main2.c
+main2.c:15:19: warning: format specifies type 'int' but the argument has type 'unsigned long'
+      [-Wformat]
+    printf("%d\n",strlen(s[i]));
+            ~~    ^~~~~~~~~~~~
+            %lu
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+asdf
+4
+owiuefj
+7
+bash-3.2$ gcc main2.c
+main2.c:28:24: warning: incompatible pointer types passing 'char **' to parameter of type
+      'char *'; dereference with * [-Wincompatible-pointer-types]
+      compare_and_flip(argv,argv+1);
+                       ^~~~
+                       *
+main2.c:5:29: note: passing argument to parameter 'a' here
+void compare_and_flip(char *a, char *b){
+                            ^
+main2.c:28:29: warning: incompatible pointer types passing 'char **' to parameter of type
+      'char *'; dereference with * [-Wincompatible-pointer-types]
+      compare_and_flip(argv,argv+1);
+                            ^~~~~~
+                            *(    )
+main2.c:5:38: note: passing argument to parameter 'b' here
+void compare_and_flip(char *a, char *b){
+                                     ^
+2 warnings generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+asdf
+4
+owiuefj
+7
+asdf
+4
+owiuefj
+7
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj
+asdf
+4
+owiuefj
+7
+asdf
+4
+owiuefj
+7
+bash-3.2$ ./a.out asdf owiuefj 235
+asdf
+4
+owiuefj
+7
+235
+3
+asdf
+4
+owiuefj
+7
+235
+3
+bash-3.2$ gcc main2.c
+main2.c:7:17: warning: format specifies type 'char *' but the argument has type 'char' [-Wformat]
+  printf("%s\n",*a);
+          ~~    ^~
+          %c
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj alhkfe
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+asdf
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj alhkfe
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+a:asdf,b:owiuefj
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+bash-3.2$ ./a.out asdf owiuefj alhkfe jafew
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+jafew
+5
+a:asdf,b:owiuefj
+a:owiuefj,b:alhkfe
+a:asdf,b:awiuefj
+asdf
+4
+awiuefj
+7
+olhkfe
+6
+jafew
+5
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf owiuefj alhkfe jafew
+asdf
+4
+owiuefj
+7
+alhkfe
+6
+jafew
+5
+a:asdf,b:owiuefj
+a:owiuefj,b:alhkfe
+a:olhkfe,b:jafew
+a:asdf,b:awiuefj
+a:awiuefj,b:jlhkfe
+a:asdf,b:jwiuefj
+asdf
+4
+jwiuefj
+7
+alhkfe
+6
+oafew
+5
+bash-3.2$ ./a.out asdf asdfg asdfgh asdfgh
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfgh
+6
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdfgh,b:asdfgh
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdf,b:asdfg
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfgh
+6
+bash-3.2$ ./a.out asdf asdfg asdfgh asdfghj
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfghj
+7
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdfgh,b:asdfghj
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdf,b:asdfg
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfghj
+7
+bash-3.2$ ./a.out asdf asdfg asdfgh asdfghj
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfghj
+7
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdfgh,b:asdfghj
+a:asdf,b:asdfg
+a:asdfg,b:asdfgh
+a:asdf,b:asdfg
+asdf
+4
+asdfg
+5
+asdfgh
+6
+asdfghj
+7
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asdfg asdfgh asdfghj
+asdf
+asdfg
+asdfgh
+asdfghj
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asdfg asdfgh asdfghj
+asdf asdfg asdfgh asdfghj 
+bash-3.2$ gcc main2.c -o main2
+bash-3.2$ ./main2 abc de fghi
+abc de fghi 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asdf
+asdf asdf 
+bash-3.2$ ./a.out asdf asd
+asdf asd 
+bash-3.2$ gcc main2.c
+main2.c:9:22: warning: format specifies type 'int' but the argument has type 'unsigned long'
+      [-Wformat]
+    printf("%d,%d\n",strlen(a),strlen(b));
+            ~~       ^~~~~~~~~
+            %lu
+main2.c:9:32: warning: format specifies type 'int' but the argument has type 'unsigned long'
+      [-Wformat]
+    printf("%d,%d\n",strlen(a),strlen(b));
+               ~~              ^~~~~~~~~
+               %lu
+2 warnings generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+4,3
+asdf asd 
+bash-3.2$ gcc main2.c
+main2.c:6:8: error: definition of variable with array type needs an
+      explicit size or an initializer
+  char temp[];
+       ^
+1 error generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+4,3
+Illegal instruction: 4
+bash-3.2$ gcc main2.c
+main2.c:9:10: warning: incompatible pointer types assigning to 'int *'
+      from 'char *' [-Wincompatible-pointer-types]
+    temp = b;
+         ^ ~
+main2.c:11:7: warning: incompatible pointer types assigning to
+      'char *' from 'int *' [-Wincompatible-pointer-types]
+    a = temp;
+      ^ ~~~~
+2 warnings generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf asd bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf asd 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asd!
+asdf asd 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asd!
+asdf asd 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf!
+asdf asd 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeec678c68!
+asdf asd 
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee79c2c68!
+asdf asd 0x7ffee79c2c6d
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee01f2c68!
+asdf asd 0x7ffee01f2c68
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeece1ac68!
+0x7ffeece1ac68 0x7ffeece1ac6d 0x7ffeece1ac68
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeec0bdc68!
+0x7ffeec0bdc68
+0x7ffeec0bdc6d
+0x7ffeec0bdc68
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee09e9c68!
+0x7ffee09e9c68
+0x7ffee09e9c6d
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee4231c68!
+97
+97
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee48acc68!
+a
+a
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeeb5a5c68!
+a
+a
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeee5d1c68!
+a
+a
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee3616c68!
+asdf
+asd
+
+bash-3.2$ gcc main2.c
+main2.c:11:8: warning: incompatible pointer to integer conversion
+      assigning to 'char' from 'char [6]' [-Wint-conversion]
+    *a = "HELLO";
+       ^ ~~~~~~~
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf
+asd
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeec486c6d
+asdf
+asd
+
+bash-3.2$ gcc main2.c
+main2.c:12:19: warning: format specifies type 'void *' but the
+      argument has type 'char' [-Wformat]
+    printf("%p\n",*a);
+            ~~    ^~
+            %c
+1 warning generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+a
+asdf
+asd
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffee6a3bc6d
+asdf
+asd
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+0x7ffeeabd3c6d
+0x7ffeeabd3c68
+0x7ffeeabd3c6d
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf,asd0x7ffee7738c6d
+0x7ffee7738c68
+0x7ffee7738c6d
+
+bash-3.2$ gcc main2.c
+main2.c:27:43: error: use of undeclared identifier 'x'
+      printf("%s,%s\n",argv[j],argv[j+1]);x
+                                          ^
+1 error generated.
+bash-3.2$ ./a.out asdf asd
+asdf,asd0x7ffee88cdc6d
+0x7ffee88cdc68
+0x7ffee88cdc6d
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd
+asdf,asd
+0x7ffeee128c6d
+asdf,asd
+0x7ffeee128c68
+0x7ffeee128c6d
+
+bash-3.2$ ./a.out asdf asd ufcwbahkvb vabiefhulabvweflh
+asdf,asd
+0x7ffee9d26c4d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+ufcwbahkvb,vabiefhulabvweflh
+ufcwbahkvb,vabiefhulabvweflh
+asdf,asd
+0x7ffee9d26c4d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+asdf,asd
+0x7ffee9d26c4d
+asdf,asd
+0x7ffee9d26c48
+0x7ffee9d26c4d
+0x7ffee9d26c51
+0x7ffee9d26c5c
+
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+asdf,asd
+0x7ffee9100c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+ufcwbahkvb,va
+0x7ffee9100c6c
+ufcwbahkvb,va
+asdf,asd
+0x7ffee9100c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+asdf,asd
+0x7ffee9100c5d
+asdf,asd
+0x7ffee9100c58
+0x7ffee9100c5d
+0x7ffee9100c61
+0x7ffee9100c6c
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+asdf,asd
+temp:asd
+0x7ffee0b02c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+ufcwbahkvb,va
+temp:va
+0x7ffee0b02c6c
+ufcwbahkvb,va
+asdf,asd
+temp:asd
+0x7ffee0b02c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+asdf,asd
+temp:asd
+0x7ffee0b02c5d
+asdf,asd
+0x7ffee0b02c58
+0x7ffee0b02c5d
+0x7ffee0b02c61
+0x7ffee0b02c6c
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+asdf,asd
+temp:0x7ffee3539c5d
+0x7ffee3539c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+ufcwbahkvb,va
+temp:0x7ffee3539c6c
+0x7ffee3539c6c
+ufcwbahkvb,va
+asdf,asd
+temp:0x7ffee3539c5d
+0x7ffee3539c5d
+asdf,asd
+asd,ufcwbahkvb
+asd,ufcwbahkvb
+asdf,asd
+temp:0x7ffee3539c5d
+0x7ffee3539c5d
+asdf,asd
+0x7ffee3539c58
+0x7ffee3539c5d
+0x7ffee3539c61
+0x7ffee3539c6c
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+asdf,asd
+temp:0x7ffeef6ddc5d
+0x7ffeef6ddc5d
+0x7ffeef6ddc58,0x7ffeef6ddc5d
+asd,ufcwbahkvb
+0x7ffeef6ddc5d,0x7ffeef6ddc61
+ufcwbahkvb,va
+temp:0x7ffeef6ddc6c
+0x7ffeef6ddc6c
+0x7ffeef6ddc61,0x7ffeef6ddc6c
+asdf,asd
+temp:0x7ffeef6ddc5d
+0x7ffeef6ddc5d
+0x7ffeef6ddc58,0x7ffeef6ddc5d
+asd,ufcwbahkvb
+0x7ffeef6ddc5d,0x7ffeef6ddc61
+asdf,asd
+temp:0x7ffeef6ddc5d
+0x7ffeef6ddc5d
+0x7ffeef6ddc58,0x7ffeef6ddc5d
+0x7ffeef6ddc58
+0x7ffeef6ddc5d
+0x7ffeef6ddc61
+0x7ffeef6ddc6c
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+temp:0x7ffee4ef4c5d
+0x7ffee4ef4c5d
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+0x7ffee4ef4c5d,0x7ffee4ef4c61
+0x7ffee4ef4c5d,0x7ffee4ef4c61
+0x7ffee4ef4c61,0x7ffee4ef4c6c
+temp:0x7ffee4ef4c6c
+0x7ffee4ef4c6c
+0x7ffee4ef4c61,0x7ffee4ef4c6c
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+temp:0x7ffee4ef4c5d
+0x7ffee4ef4c5d
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+0x7ffee4ef4c5d,0x7ffee4ef4c61
+0x7ffee4ef4c5d,0x7ffee4ef4c61
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+temp:0x7ffee4ef4c5d
+0x7ffee4ef4c5d
+0x7ffee4ef4c58,0x7ffee4ef4c5d
+0x7ffee4ef4c58
+0x7ffee4ef4c5d
+0x7ffee4ef4c61
+0x7ffee4ef4c6c
+
+bash-3.2$ gcc main2.c
+bash-3.2$ gcc main2.cp
+clang: error: no such file or directory: 'main2.cp'
+clang: error: no input files
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+0x7ffee6f77c58,0x7ffee6f77c5d
+temp:0x7ffee6f77c5d
+0x7ffee6f77c58,0x7ffee6f77c5d
+0x7ffee6f77c5d,0x7ffee6f77c61
+0x7ffee6f77c5d,0x7ffee6f77c61
+0x7ffee6f77c61,0x7ffee6f77c6c
+temp:0x7ffee6f77c6c
+0x7ffee6f77c61,0x7ffee6f77c6c
+0x7ffee6f77c58,0x7ffee6f77c5d
+temp:0x7ffee6f77c5d
+0x7ffee6f77c58,0x7ffee6f77c5d
+0x7ffee6f77c5d,0x7ffee6f77c61
+0x7ffee6f77c5d,0x7ffee6f77c61
+0x7ffee6f77c58,0x7ffee6f77c5d
+temp:0x7ffee6f77c5d
+0x7ffee6f77c58,0x7ffee6f77c5d
+0x7ffee6f77c58
+0x7ffee6f77c5d
+0x7ffee6f77c61
+0x7ffee6f77c6c
+
+bash-3.2$ gcc main2.cp
+clang: error: no such file or directory: 'main2.cp'
+clang: error: no input files
+bash-3.2$ gcc main2.c
+main2.c:7:13: warning: incompatible pointer types passing 'char **' to
+      parameter of type 'const char *'; dereference with *
+      [-Wincompatible-pointer-types]
+  if(strlen(a) <  strlen(b)){
+            ^
+            *
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:82:28: note: 
+      passing argument to parameter '__s' here
+size_t   strlen(const char *__s);
+                            ^
+main2.c:7:26: warning: incompatible pointer types passing 'char **' to
+      parameter of type 'const char *'; dereference with *
+      [-Wincompatible-pointer-types]
+  if(strlen(a) <  strlen(b)){
+                         ^
+                         *
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/string.h:82:28: note: 
+      passing argument to parameter '__s' here
+size_t   strlen(const char *__s);
+                            ^
+main2.c:27:24: warning: incompatible pointer types passing 'char *' to
+      parameter of type 'char **'; take the address with &
+      [-Wincompatible-pointer-types]
+      compare_and_flip(argv[j],argv[j+1]);
+                       ^~~~~~~
+                       &
+main2.c:5:30: note: passing argument to parameter 'a' here
+void compare_and_flip(char **a, char **b){
+                             ^
+main2.c:27:32: warning: incompatible pointer types passing 'char *' to
+      parameter of type 'char **'; take the address with &
+      [-Wincompatible-pointer-types]
+      compare_and_flip(argv[j],argv[j+1]);
+                               ^~~~~~~~~
+                               &
+main2.c:5:40: note: passing argument to parameter 'b' here
+void compare_and_flip(char **a, char **b){
+                                       ^
+4 warnings generated.
+bash-3.2$ gcc main2.c
+main2.c:27:24: warning: incompatible pointer types passing 'char *' to
+      parameter of type 'char **'; take the address with &
+      [-Wincompatible-pointer-types]
+      compare_and_flip(argv[j],argv[j+1]);
+                       ^~~~~~~
+                       &
+main2.c:5:30: note: passing argument to parameter 'a' here
+void compare_and_flip(char **a, char **b){
+                             ^
+main2.c:27:32: warning: incompatible pointer types passing 'char *' to
+      parameter of type 'char **'; take the address with &
+      [-Wincompatible-pointer-types]
+      compare_and_flip(argv[j],argv[j+1]);
+                               ^~~~~~~~~
+                               &
+main2.c:5:40: note: passing argument to parameter 'b' here
+void compare_and_flip(char **a, char **b){
+                                       ^
+2 warnings generated.
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+0x7ffee7599c58,0x7ffee7599c5d
+temp:0x7ffee7599c5d
+0x7ffee7599c5d,0x7ffee7599c58
+0x7ffee7599c58,0x7ffee7599c61
+0x7ffee7599c58,0x7ffee7599c61
+0x7ffee7599c61,0x7ffee7599c6c
+temp:0x7ffee7599c6c
+0x7ffee7599c6c,0x7ffee7599c61
+0x7ffee7599c5d,0x7ffee7599c58
+0x7ffee7599c5d,0x7ffee7599c58
+0x7ffee7599c58,0x7ffee7599c6c
+temp:0x7ffee7599c6c
+0x7ffee7599c6c,0x7ffee7599c58
+0x7ffee7599c5d,0x7ffee7599c6c
+temp:0x7ffee7599c6c
+0x7ffee7599c6c,0x7ffee7599c5d
+0x7ffee7599c6c
+0x7ffee7599c5d
+0x7ffee7599c58
+0x7ffee7599c61
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+0x7ffeee2b5c58,0x7ffeee2b5c5d
+temp:0x7ffeee2b5c5d
+0x7ffeee2b5c5d,0x7ffeee2b5c58
+0x7ffeee2b5c58,0x7ffeee2b5c61
+0x7ffeee2b5c58,0x7ffeee2b5c61
+0x7ffeee2b5c61,0x7ffeee2b5c6c
+temp:0x7ffeee2b5c6c
+0x7ffeee2b5c6c,0x7ffeee2b5c61
+0x7ffeee2b5c5d,0x7ffeee2b5c58
+0x7ffeee2b5c5d,0x7ffeee2b5c58
+0x7ffeee2b5c58,0x7ffeee2b5c6c
+temp:0x7ffeee2b5c6c
+0x7ffeee2b5c6c,0x7ffeee2b5c58
+0x7ffeee2b5c5d,0x7ffeee2b5c6c
+temp:0x7ffeee2b5c6c
+0x7ffeee2b5c6c,0x7ffeee2b5c5d
+va
+asd
+asdf
+ufcwbahkvb
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+0x7ffeeb43ec58,0x7ffeeb43ec5d
+0x7ffeeb43ec5d,0x7ffeeb43ec58
+0x7ffeeb43ec58,0x7ffeeb43ec61
+0x7ffeeb43ec58,0x7ffeeb43ec61
+0x7ffeeb43ec61,0x7ffeeb43ec6c
+0x7ffeeb43ec6c,0x7ffeeb43ec61
+0x7ffeeb43ec5d,0x7ffeeb43ec58
+0x7ffeeb43ec5d,0x7ffeeb43ec58
+0x7ffeeb43ec58,0x7ffeeb43ec6c
+0x7ffeeb43ec6c,0x7ffeeb43ec58
+0x7ffeeb43ec5d,0x7ffeeb43ec6c
+0x7ffeeb43ec6c,0x7ffeeb43ec5d
+va
+asd
+asdf
+ufcwbahkvb
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+va
+asd
+asdf
+ufcwbahkvb
+
+bash-3.2$ gcc main2.c
+bash-3.2$ ./a.out asdf asd ufcwbahkvb va
+va asd asdf ufcwbahkvb 
+bash-3.2$ gcc main2.c -o main2
+bash-3.2$ ./main2 abc de fghi
+de abc fghi 
+bash-3.2$ ./main2.c horse dog cat
+bash: ./main2.c: Permission denied
+bash-3.2$ ./main2 horse dog cat
+cat dog horse 
+bash-3.2$ ./main2 a xxx a xxx
+a a xxx xxx 
+bash-3.2$ gcc main3.c
+main3.c:8:20: warning: format specifies type 'int' but the argument has type 'double' [-Wformat]
+      printf("%d ",mat[i][j]);
+              ~~   ^~~~~~~~~
+              %f
+main3.c:10:19: warning: format specifies type 'int' but the argument has type 'double' [-Wformat]
+    printf("%d\n",mat[i][N2]);
+            ~~    ^~~~~~~~~~
+            %f
+2 warnings generated.
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out
+Segmentation fault: 11
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ ./a.out
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+HEYbash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+2.000000 1.000000
+1.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.000000 2.000000
+2.000000 0.000000
+bash-3.2$ gcc main3.c
+main3.c:22:18: warning: format specifies type 'double' but the argument has type 'char *' [-Wformat]
+        printf("%.2f\n",argv[j + i + 2]);
+                ~~~~    ^~~~~~~~~~~~~~~
+                %.2s
+1 warning generated.
+bash-3.2$ gcc main3.c
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.0
+2.0
+2.0
+3.0
+1.000000 2.000000
+2.000000 0.000000
+bash-3.2$ gcc main3.c
+main3.c:4:1: error: unknown type name 'o'
+o
+^
+main3.c:5:1: error: expected identifier or '('
+void print_mat(int N1, int N2, const double mat[][N2]) {
+^
+main3.c:27:5: warning: implicit declaration of function 'print_mat' is invalid in C99 [-Wimplicit-function-declaration]
+    print_mat(D, D, A);
+    ^
+1 warning and 2 errors generated.
+bash-3.2$ gcc main3.c
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+2
+3
+3
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+2
+3
+3
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.0
+2.0
+2.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+main3.c:21:22: error: expected ')'
+                printf("%s\n",j + i]);
+                                   ^
+main3.c:21:9: note: to match this '('
+                printf("%s\n",j + i]);
+                      ^
+main3.c:21:23: error: expected expression
+                printf("%s\n",j + i]);
+                                    ^
+2 errors generated.
+bash-3.2$ gcc main3.c
+main3.c:21:17: warning: format specifies type 'char *' but the argument has type 'int' [-Wformat]
+                printf("%s\n",j + i);
+                        ~~    ^~~~~
+                        %d
+1 warning generated.
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+2
+3
+3
+4
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+45670.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+45670.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+23450.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+2
+3
+4
+5
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+main3.c:21:16: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+        printf("%d\n",argv[j+(i-1)*D+1]);
+                ~~    ^~~~~~~~~~~~~~~~~
+                %s
+1 warning generated.
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+-415560614
+-415560610
+-415560606
+-415560602
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.0
+2.0
+3.0
+4.0
+0.000000 0.000000
+0.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+Segmentation fault: 11
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.000000 3.000000
+3.000000 0.000000
+bash-3.2$ gcc main3.c
+main3.c:21:16: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+        printf("%d\n",argv[j+i*D+2]);
+                ~~    ^~~~~~~~~~~~~
+                %s
+1 warning generated.
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.0
+2.0
+3.0
+4.0
+1.000000 3.000000
+3.000000 0.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.0
+2.0
+3.0
+4.0
+1.000000 2.000000
+3.000000 4.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.000000 2.000000
+3.000000 4.000000
+bash-3.2$ gcc main3.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 4.0
+1.000000 2.000000
+3.000000 4.000000
+bash-3.2$ gcc main4.c
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+0.000000
+0.000000
+0.000000
+0.000000
+0.000000
+0.000000
+0.000000 0.000000 0.000000
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+3.000000
+3.000000
+3.000000
+0.000000
+0.000000
+0.000000
+0.000000 0.000000 0.000000
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+8.000000
+17.000000
+26.000000
+0.000000
+0.000000
+0.000000
+0.000000 0.000000 0.000000
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+8.000000
+17.000000
+26.000000
+8.000000
+17.000000
+26.000000
+0.000000 0.000000 0.000000
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+8.000000
+17.000000
+26.000000
+8.000000
+17.000000
+26.000000
+8.000000 17.000000 26.000000
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+8.00
+17.00
+26.00
+8.00
+17.00
+26.00
+8.00 17.00 26.00
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+check dot:
+8.00
+17.00
+26.00
+check copy:
+8.00
+17.00
+26.00
+check transpose:
+8.00 17.00 26.00
+bash-3.2$ gcc main4.c -o main4
+bash-3.2$ ./main4 3 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0
+check dot:
+8.00
+17.00
+26.00
+check copy:
+8.00
+17.00
+26.00
+check transpose:
+8.00 17.00 26.00
+bash-3.2$ ls
+README.md		main2			main4			power_iteration.pdf
+a.out			main2.c			main4.c
+main1.c			main3.c			main5.c
+bash-3.2$ gcc main5.c
+main5.c:67:5: error: use of undeclared identifier 'k'
+    k = 5;
+    ^
+main5.c:72:30: error: too few arguments to function call, expected 6, have 5
+      dot(D,D,A_to_k,A,A_to_k);
+      ~~~                    ^
+main5.c:14:1: note: 'dot' declared here
+void dot(int N1, int N2, int N3, const double mat1[][N2], const double mat2[][N3], doubl...
+^
+main5.c:74:15: error: assigning to 'double' from incompatible type 'void'
+    y_k[D][1] = dot(D,D,1,A_to_k,x,y_k);
+              ^ ~~~~~~~~~~~~~~~~~~~~~~~
+main5.c:75:18: error: too few arguments to function call, expected 3, have 1
+    print_mat(y_k);
+    ~~~~~~~~~    ^
+main5.c:5:1: note: 'print_mat' declared here
+void print_mat(int N1, int N2, double mat[][N2]) {
+^
+4 errors generated.
+bash-3.2$ gcc main5.c
+main5.c:72:30: error: too few arguments to function call, expected 6, have 5
+      dot(D,D,A_to_k,A,A_to_k);
+      ~~~                    ^
+main5.c:14:1: note: 'dot' declared here
+void dot(int N1, int N2, int N3, const double mat1[][N2], const double mat2[][N3], double ...
+^
+main5.c:74:15: error: assigning to 'double' from incompatible type 'void'
+    y_k[D][1] = dot(D,D,1,A_to_k,x,y_k);
+              ^ ~~~~~~~~~~~~~~~~~~~~~~~
+main5.c:75:18: error: too few arguments to function call, expected 3, have 1
+    print_mat(y_k);
+    ~~~~~~~~~    ^
+main5.c:5:1: note: 'print_mat' declared here
+void print_mat(int N1, int N2, double mat[][N2]) {
+^
+3 errors generated.
+bash-3.2$ gcc main5.c
+main5.c:74:15: error: assigning to 'double' from incompatible type 'void'
+    y_k[D][1] = dot(D,D,1,A_to_k,x,y_k);
+              ^ ~~~~~~~~~~~~~~~~~~~~~~~
+main5.c:75:18: error: too few arguments to function call, expected 3, have 1
+    print_mat(y_k);
+    ~~~~~~~~~    ^
+main5.c:5:1: note: 'print_mat' declared here
+void print_mat(int N1, int N2, double mat[][N2]) {
+^
+2 errors generated.
+bash-3.2$ gcc main5.c
+main5.c:75:18: error: too few arguments to function call, expected 3, have 1
+    print_mat(y_k);
+    ~~~~~~~~~    ^
+main5.c:5:1: note: 'print_mat' declared here
+void print_mat(int N1, int N2, double mat[][N2]) {
+^
+1 error generated.
+bash-3.2$ gcc main5.c
+bash-3.2$ gcc main5.c
+bash-3.2$ 2 1.0 2.0 3.0 5.0
+bash: 2: command not found
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+0.00
+0.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+0.00
+0.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+0.00
+0.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+main5.c:70:12: error: variable-sized object may not be initialized
+    double A_to_k[D][D] = A[D][D];
+           ^              ~~~~~~~
+1 error generated.
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+2.00
+5.00
+0.00
+1.00
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+2.00
+5.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+18.00
+31.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+18.00
+233.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1.00 2.00
+3.00 5.00
+2.00
+5.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+18.00
+31.00
+0.00
+1.00
+bash-3.2$ gcc main5.c
+main5.c:74:16: error: passing 'double' to parameter of incompatible type 'double (*)[*]'
+    copy(D,D,A,A_to_k_1[D][D]);
+               ^~~~~~~~~~~~~~
+main5.c:29:58: note: passing argument to parameter 'dst' here
+void copy(int N1, int N2, const double mat[][N2], double dst[][N2]) {
+                                                         ^
+main5.c:83:26: error: use of undeclared identifier 'y'
+    dot(D,D,1,A_to_k_1,x,y,y_k_1);
+                         ^
+2 errors generated.
+bash-3.2$ gcc main5.c
+main5.c:74:16: error: passing 'double' to parameter of incompatible type 'double (*)[*]'
+    copy(D,D,A,A_to_k_1[D][D]);
+               ^~~~~~~~~~~~~~
+main5.c:29:58: note: passing argument to parameter 'dst' here
+void copy(int N1, int N2, const double mat[][N2], double dst[][N2]) {
+                                                         ^
+1 error generated.
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+bash-3.2$ gcc main5.c
+main5.c:92:26: error: too many arguments to function call, expected 6, have 7
+    dot(1,D,D,1,y_kT,y_k,bunshi);
+    ~~~                  ^~~~~~
+main5.c:14:1: note: 'dot' declared here
+void dot(int N1, int N2, int N3, const double mat1[][N2], const double mat2[][N3], double ...
+^
+main5.c:93:28: error: too many arguments to function call, expected 6, have 7
+    dot(1,D,D,1,y_kT,y_k_1,bunbo);
+    ~~~                    ^~~~~
+main5.c:14:1: note: 'dot' declared here
+void dot(int N1, int N2, int N3, const double mat1[][N2], const double mat2[][N3], double ...
+^
+2 errors generated.
+bash-3.2$ gcc main5.c
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+6.73
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+6.73
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 18.00
+12.00 31.00
+6.73
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+25.76
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+28709.00 153687.00
+230267.00 652511.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1685.00 9020.00
+13512.00 38290.00
+17.05
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+28709.00 153687.00
+230267.00 652511.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1685.00 9020.00
+13512.00 38290.00
+17.05
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+-2147483648.00 -2147483648.00
+-2147483648.00 -2147483648.00
+1.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1685.00 9020.00
+13512.00 38290.00
+17.05
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1685.00 9020.00
+13512.00 38290.00
+17.05
+1547484500.00
+90752880.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+28709.00 153687.00
+230267.00 652511.00
+1.00
+-2147483648.00
+-2147483648.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+489243.00 2619064.00
+3924086.00 11119747.00
+1.00
+-2147483648.00
+-2147483648.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+489243.00 2619064.00
+3924086.00 11119747.00
+17.04
+130508269580105.00
+7658273323685.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+41262171695.00 220888741820.00
+330952809678.00 937826395105.00
+17.04
+928310183618462254891008.00
+54473618772260332503040.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+28709.00 153687.00
+230267.00 652511.00
+17.04
+449390299090.00
+26370902930.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1685.00 9020.00
+13512.00 38290.00
+17.05
+1547484500.00
+90752880.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+99.00 527.00
+793.00 2246.00
+16.75
+5322245.00
+317690.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+1.00 2.00
+3.00 5.00
+1.00
+29.00
+29.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+25.76
+18985.00
+737.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+1.00
+18985.00
+18985.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+25.76
+18985.00
+737.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+25.76
+18985.00
+737.00
+bash-3.2$ gcc main5.c
+bash-3.2$ ./a.out 2 1.0 2.0 3.0 5.0
+7.00 36.00
+46.00 133.00
+36.00
+133.00
+25.76
+018985.00
+737.00
+bash-3.2$ 
